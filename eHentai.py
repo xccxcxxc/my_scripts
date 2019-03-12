@@ -68,7 +68,6 @@ files = os.listdir(dirname)
 
 for file in files:
     if os.path.isfile(file):
-        if file.split('.')[0].isalnum():
-            shutil.move(file, path)
+        shutil.move(file, path)
 
 print('Done.')

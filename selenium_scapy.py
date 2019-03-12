@@ -10,9 +10,18 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.implicitly_wait(10)
 
-url = 'https://18h.animezilla.com/manga/2570/1'  # starting url
+url = 'https://18h.animezilla.com/manga/3405/55'
 path = '/Users/cx/Downloads/银魂'
 os.makedirs(path, exist_ok=True)
+
+def nextUrl(soup):
+    nextLinkElem = soup.select('a[rel="next"]')
+    if len(nextLinkElem) == 0:
+        return
+    else:
+        nextLink = nextLinkElem[0]
+        nexturl = nextLink.get('href')
+    return url
 
 while True:
     # TODO: Download the page.
@@ -57,13 +66,13 @@ while True:
 
         pyautogui.click(750, 305)
 
-        # TODO: Get the Prev button's url.
-        prevLinkElem = soup.select('a[rel="next"]')
-        if len(prevLinkElem) == 0:
+        # TODO: Get the next button's url.
+        nextLinkElem = soup.select('a[rel="next"]')
+        if len(nextLinkElem) == 0:
             break
         else:
-            prevLink = prevLinkElem[0]
-            url = prevLink.get('href')
+            nextLink = nextLinkElem[0]
+            url = nextLink.get('href')
 
 # 等待 2 秒文件全部保存完
 time.sleep(2)
