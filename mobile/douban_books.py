@@ -5,8 +5,8 @@ import webbrowser
 import dialogs
 
 LIST_NUM = 3
-API = 'https://api.douban.com/v2/book/search?q='
-URL = 'https://book.douban.com/subject/'
+API = 'https://api.mobile.com/v2/book/search?q='
+URL = 'https://book.mobile.com/subject/'
 
 
 def main():
