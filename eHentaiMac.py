@@ -1,17 +1,15 @@
 #! python3
 import pyautogui
 import time
-import requests
 import os
 import shutil
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
 driver = webdriver.Chrome()
-driver.implicitly_wait(10)
 
-url = 'https://e-hentai.org/lofi/s/10bbf7ff59/1372714-3'
-path = '/Users/cx/Downloads/测试'
+url = 'https://e-hentai.org/lofi/s/9a41bfddb8/911274-7'
+path = '/Users/cx/Downloads/纲手'
 os.makedirs(path, exist_ok=True)
 
 while True:
@@ -20,8 +18,8 @@ while True:
     driver.get(url)
     time.sleep(2.5)
     if "E-Hentai" not in driver.title:
-        driver.get(url)
-        assert "E-Hentai" in driver.title
+        driver.refresh()
+        time.sleep(2.5)
 
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
