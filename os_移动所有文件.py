@@ -12,7 +12,6 @@ def move_to_current_dir(foldername, file):
     # 如果目标文件已经存在，不覆盖
     if not os.path.exists(os.path.join(base_dir, file)):
         # os.getcwd 有可能是执行命令的目录而不是文件所在目录
-        # 记住 shutil 命令一定要用正确路径作为参数
         shutil.move(os.path.join(foldername, file), os.path.join(base_dir, file))
         print(os.path.join(foldername, file), os.path.join(base_dir, file))
     return
