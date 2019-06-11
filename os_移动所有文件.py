@@ -9,7 +9,6 @@ base_dir = os.path.abspath(os.path.dirname(__file__))
 
 
 def move_to_current_dir(foldername, file):
-
     # 如果目标文件已经存在，不覆盖
     if not os.path.exists(os.path.join(base_dir, file)):
         # os.getcwd 有可能是执行命令的目录而不是文件所在目录
