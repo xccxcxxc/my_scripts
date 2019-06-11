@@ -1,6 +1,6 @@
 import csv
 import re
-import os
+
 
 
 oldFile = 'test.csv'
