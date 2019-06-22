@@ -1,7 +1,7 @@
 #! python3
 from selenium import webdriver
 
-start_page = 160
+start_page = 340
 page_num = 20
 url = 'http://hotbaidu.com/page/'
 
