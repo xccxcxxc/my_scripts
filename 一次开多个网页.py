@@ -1,11 +1,15 @@
 #! python3
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 start_page = 460
 page_num = 20
-url = 'http://hotbaidu.com/page/'
+url = 'http://hotbaidu.com/category/uncategorized/page/'
 
-driver = webdriver.Chrome()
+
+options = Options()
+options.binary_location = "./chrome/chrome.exe"
+driver = webdriver.Chrome(executable_path="./chrome/chromedriver.exe", options=options)
 driver.get(f'{url}{start_page}')
 driver.maximize_window()
 #driver.set_window_size(1366,768)
