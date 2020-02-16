@@ -1,4 +1,10 @@
 #! python3
+
+
+"""
+用于 Mac 上下载 e 站资源，通过 selenium 框架下载，用 pyautogui 控制鼠标
+"""
+
 import pyautogui
 import time
 import os
