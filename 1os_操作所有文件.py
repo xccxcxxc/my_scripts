@@ -44,11 +44,28 @@ def do_something_to_file(foldername, file):
     if os.path.splitext(file)[-1] == '.txt':
         print(f'fold:{foldername}, file:{file}, name:{os.path.splitext(file)[0]}')
 
-    name = os.path.splitext(file)[0]
-    ext = os.path.splitext(file)[-1]
-    if ext == '.txt':
-        file =
-        f = open(file, encoding='utf-8')
+    if os.path.splitext(file)[-1] == '.txt':
+        absfile = os.path.join(foldername, file)
+        with open(absfile, encoding='utf-8') as f:
+            text = f.read()
+        # 打印文件名
+        print(absfile)
+        list_txt = text.split()
+
+        i = 0
+        for info in list_txt:
+            print(f'info{i}:{info}')
+            i += 1
+
+        # 以下为高度模板定制化内容，都是死的
+        index = list_txt.index("1．姓名：")
+        name = list_txt[index+1]
+        sex = ""
+        if "性别：" in list_txt:
+            index = list_txt.index("性别：")
+            sex = list_txt[index+1]
+        print(f'name:{name} sex:{sex}')
+
     return
 
 
