@@ -66,6 +66,7 @@ def do_something_to_file(foldername, file):
             sex = list_txt[index+1]
         print(f'name:{name} sex:{sex}')
 
+
     return
 
 
