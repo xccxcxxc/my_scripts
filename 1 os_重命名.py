@@ -8,3 +8,5 @@ for old_name in file_list:
         new_name = old_name[0:-1]
         os.rename(old_name, new_name)
         pass
+
+# str.replace('ss', 's01') 可以进行字符串替换
