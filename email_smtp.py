@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# 用于调用 smtp 协议发送邮件
+
 import smtplib
 import mimetypes
 from email import encoders
