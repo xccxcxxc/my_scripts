@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+# 通过替换字符串的方法给影视文件重新命名
 import os
 
 folder_path = input('Input folder path: ') or '/mnt/sda1/2TV/命运石之门'
