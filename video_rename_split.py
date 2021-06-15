@@ -6,13 +6,9 @@ import os
 import re
 import sys
 
-BASE_PATH = '/mnt/sda1/2TV/'
-
 if __name__ == '__main__':
-    # folder = input(f'\n\nInput the folder, base path is "{BASE_PATH}": ')
-    folder = sys.argv[1]
+    folder_path = sys.argv[1]
     tv_name = sys.argv[2]
-    folder_path = BASE_PATH + folder
 
     os.chdir(folder_path)
     file_list = os.listdir(folder_path)
