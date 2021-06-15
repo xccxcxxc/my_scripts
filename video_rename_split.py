@@ -25,9 +25,9 @@ if __name__ == '__main__':
         ret = re.split(r'\W', old_name)
         if len(ret) > int(episode):
             if season == episode:
-                new_name = tv_name + '-' + ret[int(season)] + '.' + ret[-1]
+                new_name = tv_name + '-' + ret[int(season)].upper() + '.' + ret[-1]
             else:
-                new_name = tv_name + '-' + ret[int(season)] + ret[int(episode)] + '.' + ret[-1]
+                new_name = tv_name + '-' + ret[int(season)].upper() + ret[int(episode)].upper() + '.' + ret[-1]
             new_names.append(new_name)
             if not os.path.exists(new_name):
                 os.replace(old_name, new_name)
