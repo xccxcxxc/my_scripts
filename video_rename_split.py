@@ -21,9 +21,9 @@ if __name__ == '__main__':
         ret = re.split(r'\W', old_name)
         if len(ret) > max(int(season), int(episode)):
             if season == episode:
-                new_name = tv_name + '-' + ret[int(season)].upper() + '.' + ret[-1]
+                new_name = tv_name + '.' + ret[int(season)].upper() + '.' + ret[-1]
             else:
-                new_name = tv_name + '-' + ret[int(season)].upper() + ret[int(episode)].upper() + '.' + ret[-1]
+                new_name = tv_name + '.' + ret[int(season)].upper() + ret[int(episode)].upper() + '.' + ret[-1]
             file_names[old_name] = new_name
 
     print('\nThe new names are: ')
