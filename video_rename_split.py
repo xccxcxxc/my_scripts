@@ -18,7 +18,7 @@ if __name__ == '__main__':
     file_names = {}
     file_list.sort()
     for old_name in file_list:
-        ret = re.split(r'\W', old_name)
+        ret = re.split(r'\W+', old_name)
         if len(ret) > max(int(season), int(episode)):
             if season == episode:
                 new_name = tv_name + '.' + ret[int(season)].upper() + '.' + ret[-1]
