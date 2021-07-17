@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+遍历文件夹中的所有文件，根据扩展名进行过滤，在指定数组扩展名之外的文件进行显示
+"""
 
 import contextlib
 import os
@@ -72,6 +75,13 @@ def run():
 
 
 if __name__ == "__main__":
+    """
+    代码的执行顺序是：
+
+    with语句首先执行chdir 函数中 yield之前的语句
+    yield调用会执行with语句内部的所有语句
+    最后执行yield之后的语句
+    """
     with chdir("/home/kali/Downloads/wordpress"):
         gather_paths()
     input('Press return to continue.')
