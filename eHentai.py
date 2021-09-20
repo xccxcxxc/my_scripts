@@ -9,17 +9,6 @@ import requests
 
 from lxml import etree
 
-url = 'https://e-hentai.org/lofi/s/42b847d9c8/1829683-1'
-#url = 'https://e-hentai.org/lofi/s/2faeb29c17/1644336-1'
-dir_name = 'test'
-zip_name = 'test.zip'
-session = requests.session()
-headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
-}
-# 设置session的请求头信息
-session.headers = headers
-
 
 # zipfilename 是压缩包名字，dirname 是要打包的目录
 def compress_file(zipfilename, dirname):
@@ -34,6 +23,17 @@ def compress_file(zipfilename, dirname):
                         filepath = os.path.join(root, single_file)
                         z.write(filepath)
 
+
+url = input('请输入需要下载的网址：') or 'https://e-hentai.org/lofi/s/d063aba48d/1982861-1'
+#url = 'https://e-hentai.org/lofi/s/2faeb29c17/1644336-1'
+dir_name = input('请输入下载的漫画名称：') or 'test'
+zip_name = dir_name + '.zip'
+session = requests.session()
+headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
+}
+# 设置session的请求头信息
+session.headers = headers
 
 if not pathlib.Path(dir_name).exists():
     os.mkdir(dir_name)
@@ -54,6 +54,7 @@ while True:
     if i == max_num:
         compress_file(zip_name, dir_name)
         shutil.rmtree(dir_name)
+        shutil.move(zip_name, '/Users/zg/OneDrive/')
         break
     i += 1
     url = html.xpath("//a[text()='Next Page >']/@href")[0]
